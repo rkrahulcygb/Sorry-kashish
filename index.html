@@ -3,56 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorry Kashish Ji ❤️</title>
+    <title>Sorry Kashish Ji ❤️ 🦋</title>
     <style>
         body { margin: 0; font-family: 'Arial', sans-serif; background: #ffe6e6; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
         .slider { display: flex; width: 500vw; transition: transform 0.6s ease-in-out; }
         .page { width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; box-sizing: border-box; }
-        .box { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-width: 350px; position: relative; z-index: 10; }
+        .box { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-width: 350px; position: relative; z-index: 10; border: 2px solid #ffb3b3; }
         h1 { color: #e53935; font-size: 24px; }
         p { font-size: 18px; color: #444; line-height: 1.5; }
         img { width: 180px; border-radius: 10px; margin-bottom: 15px; }
-        button { background: #e53935; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-size: 16px; cursor: pointer; margin-top: 20px; }
+        button { background: #e53935; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-size: 16px; cursor: pointer; margin-top: 20px; box-shadow: 0 4px 10px rgba(229, 57, 53, 0.3); }
         
-        .heart { position: fixed; color: #ff4d4d; font-size: 20px; animation: float 4s linear infinite; z-index: 1; pointer-events: none; }
-        @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; } }
+        /* Floating Butterflies & Hearts Animation */
+        .floating { position: fixed; font-size: 24px; animation: float 5s linear infinite; z-index: 1; pointer-events: none; }
+        @keyframes float { 
+            0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 1; } 
+            100% { transform: translateY(-10vh) translateX(50px) rotate(360deg); opacity: 0; } 
+        }
     </style>
 </head>
 <body>
 
-    <audio id="bgm" loop><source src="music.mp3" type="audio/mpeg"></audio>
+    <audio id="bgm" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
 
     <div class="slider" id="slider">
         <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/079_9zU9v_AAAAAi/cute-bear-sad.gif">
-                <h1>I am Sorry Kashish Ji! ❤️</h1>
-                <p>Meri pyari <b>Cute Wife</b>, ek baar meri baat sun lo...</p>
-                <button onclick="startApp()">Tap to Start 🎶</button>
+                <h1>I am Sorry Kashish Ji! 🦋</h1>
+                <p>Meri pyari <b>Cute Wife</b>, ek baar is nacheez ki baat sun lo... 🌸</p>
+                <button onclick="startApp()">Tap to Start Music 🎶</button>
             </div>
         </div>
 
         <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/zM-f6_2H_pIAAAAi/mochi-mochi-peach-cat-crying.gif">
-                <p>Kashish ji, main jaanta hoon maine apni <b>cute wife</b> ka dil dukhaya hai. Main sach mein bohot sharminda hoon.</p>
+                <p>Kashish ji, aap meri <b>Butterfly</b> ho, aur maine aapko udaas kiya. Please mujhe maaf kar do! 🦋🥺</p>
                 <button onclick="nextPage()">Aage Dekho ➡️</button>
             </div>
-            <audio id="bgm" preload="auto" loop>
-    <source src="music.mp3" type="audio/mpeg">
-    <source src="music.mp3" type="audio/mp3">
-            </audio>
+        </div>
+
+        <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/p_L_FmH_0m8AAAAi/hug-warm-hug.gif">
-                <p>Aap duniya ki sabse best wife ho. Kya aap apne Rahul ko maaf nahi karogi? 🥺</p>
-                <button onclick="nextPage()">Please... ➡️</button>
+                <p>Aap duniya ki sabse sundar aur <b>Best Wife</b> ho. Bina aapke ye Rahul adhoora hai. 🌷</p>
+                <button onclick="nextPage()">Next ➡️</button>
             </div>
         </div>
 
         <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/y_A_qN4_76QAAAAi/white-bear-forgive-me.gif">
-                <p>Kashish ji, hamari ladayi se zyada hamara pyar bada hai. Please maan jao na meri <b>cute wife</b>! 🙏</p>
+                <p>I promise, ab se main kabhi apni <b>Cute Butterfly</b> ko pareshan nahi karunga. Maan jao na! 🙏🦋</p>
                 <button onclick="nextPage()">Ek Last Cheez ➡️</button>
             </div>
         </div>
@@ -60,8 +66,8 @@
         <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/6S30y8VfR_QAAAAi/love-is-in-the-air-joypixel.gif">
-                <h1>I Love You So Much! ❤️</h1>
-                <p>Kashish ji, aap meri duniya ho. Main vada karta hoon ab aapko kabhi shikayat ka mauka nahi dunga.</p>
+                <h1>I Love You Forever! ❤️</h1>
+                <p>Kashish ji, aap meri zindagi ki bahaar ho. Love you my <b>Cute Wife!</b> 🦋💍</p>
                 <button onclick="location.reload()">Wapas Dekho 🔄</button>
             </div>
         </div>
@@ -70,9 +76,13 @@
     <script>
         let currentPage = 0;
         const slider = document.getElementById('slider');
+        const audio = document.getElementById('bgm');
 
         function startApp() {
-            document.getElementById('bgm').play();
+            // Music play karne ki koshish
+            audio.play().catch(error => {
+                console.log("Autoplay blocked, user must interact.");
+            });
             nextPage();
         }
 
@@ -83,16 +93,18 @@
             }
         }
 
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);
+        // Floating Butterfly & Hearts Function
+        function createEmoji() {
+            const emojis = ['🦋', '❤️', '🌸', '✨'];
+            const el = document.createElement('div');
+            el.classList.add('floating');
+            el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 5000);
         }
-        setInterval(createHeart, 300);
+        setInterval(createEmoji, 400);
     </script>
 
 </body>
