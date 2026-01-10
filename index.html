@@ -5,126 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Cute Wife Kashish ❤️</title>
     <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0d17; overflow: hidden; color: white; }
-        
-        /* Star Background */
-        #stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-
-        .slider { display: flex; width: 500vw; height: 100vh; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-        .page { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; position: relative; }
-
-        .card { 
-            background: rgba(255, 255, 255, 0.1); 
-            backdrop-filter: blur(10px);
-            padding: 30px; border-radius: 20px; 
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5); 
-            max-width: 360px; width: 100%; text-align: center; 
-            z-index: 10; border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        h1 { color: #ff85a2; font-size: 24px; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255,133,162,0.5); }
-        p { font-size: 18px; line-height: 1.6; color: #fce4ec; margin: 15px 0; }
-        
-        .couple-img { width: 100%; border-radius: 15px; margin-bottom: 20px; border: 2px solid #ff85a2; }
-        .gif-img { width: 140px; margin-bottom: 15px; }
-
-        button { 
-            background: linear-gradient(45deg, #ff85a2, #ff4d6d);
-            color: white; border: none; padding: 14px 28px; 
-            border-radius: 30px; font-size: 16px; cursor: pointer; 
-            margin-top: 20px; width: 100%; font-weight: bold;
-            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
-            transition: 0.3s;
-        }
-
-        /* Floating Stars Animation */
-        .star { position: absolute; background: white; border-radius: 50%; animation: twinkle var(--d) linear infinite; }
-        @keyframes twinkle {
-            0% { transform: translateY(110vh) scale(0); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #0b0e14; font-family: 'Arial', sans-serif; color: #fff; overflow: hidden; height: 100vh; }
+        .stars-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+        .slider { display: flex; width: 700vw; height: 100vh; transition: transform 0.8s cubic-bezier(0.45, 0.05, 0.55, 0.95); }
+        .page { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; position: relative; }
+        .card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 30px 20px; width: 100%; max-width: 360px; text-align: center; z-index: 10; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .couple-img { width: 100%; border-radius: 16px; margin-bottom: 15px; border: 1px solid rgba(255, 133, 162, 0.3); }
+        .gif-img { width: 100px; margin-bottom: 10px; }
+        h1 { font-size: 20px; color: #ff85a2; margin-bottom: 10px; }
+        p { font-size: 16px; line-height: 1.5; color: #e0e0e0; margin-bottom: 15px; }
+        button { background: linear-gradient(135deg, #ff85a2 0%, #ff4d6d 100%); color: white; border: none; padding: 14px; width: 100%; border-radius: 50px; font-size: 15px; font-weight: bold; cursor: pointer; box-shadow: 0 10px 20px rgba(255, 77, 109, 0.3); }
+        .star { position: absolute; background: #fff; border-radius: 50%; opacity: 0.5; animation: moveUp var(--speed) linear infinite; }
+        @keyframes moveUp { 0% { transform: translateY(100vh); opacity: 0; } 50% { opacity: 0.8; } 100% { transform: translateY(-10vh); opacity: 0; } }
+        #gift-container { cursor: pointer; }
     </style>
 </head>
 <body>
-
-    <div id="stars"></div>
+    <div class="stars-container" id="starsContainer"></div>
     <audio id="bgm" loop><source src="music.mp3" type="audio/mpeg"></audio>
 
     <div class="slider" id="mainSlider">
-        <div class="page">
-            <div class="card">
-                <img src="https://media.tenor.com/079_9zU9v_AAAAAi/cute-bear-sad.gif" class="gif-img">
-                <h1>I am Sorry Kashish Ji! 🥺</h1>
-                <p>It's late night... and I've been thinking about you. Please listen to your <b>Rahul</b> once. 🌙✨</p>
-                <button onclick="startApp()">Tap to Start 🎶</button>
-            </div>
-        </div>
+        <div class="page"><div class="card">
+            <img src="https://media.tenor.com/079_9zU9v_AAAAAi/cute-bear-sad.gif" class="gif-img">
+            <h1>I am Sorry Kashish Ji! 🥺</h1>
+            <p>It's late night... and I've been thinking about you. Please listen to your <b>Rahul</b> once. 🌙</p>
+            <button onclick="startApp()">Let me talk... 🎶</button>
+        </div></div>
 
-        <div class="page">
-            <div class="card">
-                <img src="Photo1.jpg" class="couple-img">
-                <p>Kashish ji, aap meri duniya ho. <b>You are my world!</b> 🌎 Maine apni <b>Cute Wife</b> ka dil dukhaya, main bohot sharminda hoon. 😭💔</p>
-                <button onclick="nextPage()">Continue reading... ➡️</button>
-            </div>
-        </div>
+        <div class="page"><div class="card">
+            <img src="Photo1.jpg" class="couple-img">
+            <p>Kashish ji, aap meri duniya ho. <b>You are my world!</b> 🌎 Maine apni <b>Cute Wife</b> ka dil dukhaya, main bohot sharminda hoon. 😭💔</p>
+            <button onclick="nextPage()">Read more... ➡️</button>
+        </div></div>
 
-        <div class="page">
-            <div class="card">
-                <img src="Photo2.jpg" class="couple-img">
-                <p>Aap duniya ki sabse best wife ho. Please apne Rahul ko maaf kar do na? 🥺🌹</p>
-                <button onclick="nextPage()">I need you... ➡️</button>
-            </div>
-        </div>
+        <div class="page"><div class="card">
+            <img src="Photo2.jpg" class="couple-img">
+            <p>Har pal mujhe bas aapki yaad aati hai. Please apne <b>Rahul</b> ko maaf kar do na? 🌹🥺</p>
+            <button onclick="nextPage()">I need you... ➡️</button>
+        </div></div>
 
-        <div class="page">
-            <div class="card">
-                <img src="https://media.tenor.com/y_A_qN4_76QAAAAi/white-bear-forgive-me.gif" class="gif-img">
-                <p>Main wada karta hoon ab kabhi apni <b>Cute Wife</b> ko rone nahi dunga. Let's make it better again. 🙏✨</p>
-                <button onclick="nextPage()">Something special ➡️</button>
-            </div>
-        </div>
+        <div class="page"><div class="card">
+            <img src="Photo3.jpg" class="couple-img">
+            <p>I promise to do better, to be better, for you. Humara pyaar sabse upar hai. 🙏✨</p>
+            <button onclick="nextPage()">Continue... ➡️</button>
+        </div></div>
 
-        <div class="page">
-            <div class="card">
-                <img src="Photo3.png" class="couple-img">
-                <h1>I Love You Forever! ❤️</h1>
-                <p>Kashish ji, aap meri zindagi ho. My love for you will never wilt. Maaf karke wapas aa jao! 💍🎁</p>
-                <button onclick="location.reload()">Wapas Dekho 🔄</button>
-            </div>
-        </div>
+        <div class="page"><div class="card">
+            <img src="Photo4.jpg" class="couple-img">
+            <p>Aapki smile meri sabse badi taqat hai. Please ek baar muskura do. 😊💖</p>
+            <button onclick="nextPage()">Wait, one more thing... ➡️</button>
+        </div></div>
+
+        <div class="page"><div class="card" id="gift-container" onclick="openGift()">
+            <img src="https://media.tenor.com/6S30y8VfR_QAAAAi/love-is-in-the-air-joypixel.gif" class="gif-img">
+            <h1>I have something special... 🎁</h1>
+            <p>Click the box to open your surprise!</p>
+            <button>Click to Open 🎁</button>
+        </div></div>
+
+        <div class="page"><div class="card">
+            <img src="Photo5.jpg" class="couple-img">
+            <h1>I Love You Forever! ❤️</h1>
+            <p>Kashish ji, aap meri har saans mein ho. Love you my <b>Cute Wife!</b> 💍✨</p>
+            <button onclick="location.reload()">Wapas Dekho 🔄</button>
+        </div></div>
     </div>
 
     <script>
         let current = 0;
         const slider = document.getElementById('mainSlider');
         const audio = document.getElementById('bgm');
-        const starContainer = document.getElementById('stars');
+        const starsContainer = document.getElementById('starsContainer');
 
-        function startApp() {
-            audio.play().catch(() => console.log("Click to play"));
-            nextPage();
-        }
+        function startApp() { audio.play(); nextPage(); }
+        function nextPage() { if (current < 6) { current++; slider.style.transform = `translateX(-${current * 100}vw)`; } }
+        function openGift() { nextPage(); }
 
-        function nextPage() {
-            if (current < 4) {
-                current++;
-                slider.style.transform = `translateX(-${current * 100}vw)`;
-            }
-        }
-
-        // Create Space Stars
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 60; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             const size = Math.random() * 3 + 'px';
-            star.style.width = size;
-            star.style.height = size;
+            star.style.width = size; star.style.height = size;
             star.style.left = Math.random() * 100 + 'vw';
-            star.style.setProperty('--d', (Math.random() * 3 + 2) + 's');
+            star.style.setProperty('--speed', (Math.random() * 4 + 3) + 's');
             star.style.animationDelay = Math.random() * 5 + 's';
-            starContainer.appendChild(star);
+            starsContainer.appendChild(star);
         }
     </script>
 </body>
