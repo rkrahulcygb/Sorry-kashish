@@ -3,107 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Cute Wife Kashish ❤️</title>
+    <title>Sorry Kashish Ji ❤️ 🦋</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            background: radial-gradient(circle, #ffafbd, #ffc3a0); 
-            height: 100vh; display: flex; justify-content: center; 
-            align-items: center; overflow: hidden; font-family: 'Arial', sans-serif;
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Arial', sans-serif; background: #ffe6e6; overflow: hidden; }
+        #animation-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        .slider { display: flex; width: 700vw; height: 100vh; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .page { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .box { 
+            background: white; padding: 25px; border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 350px; 
+            width: 100%; text-align: center; z-index: 10; border: 2px solid #ffb3b3; 
         }
-
-        /* Intro Card */
-        #introCard {
-            background: white; padding: 30px; border-radius: 20px;
-            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 320px; z-index: 100; position: absolute;
+        h1 { color: #e53935; font-size: 22px; margin-bottom: 10px; }
+        p { font-size: 17px; color: #444; line-height: 1.4; margin: 10px 0; }
+        .couple-img { width: 100%; max-height: 250px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; border: 2px solid #ffe6e6; }
+        button { 
+            background: #e53935; color: white; border: none; padding: 12px 25px; 
+            border-radius: 25px; font-size: 16px; cursor: pointer; margin-top: 15px; 
+            width: 100%; font-weight: bold; 
         }
-
-        /* 3D Gallery Style */
-        .container {
-            width: 150px; height: 200px;
-            position: relative; perspective: 1000px;
-            display: none; 
-        }
-
-        .gallery {
-            width: 100%; height: 100%;
-            position: absolute; transform-style: preserve-3d;
-            animation: rotate 18s linear infinite;
-        }
-
-        .gallery span {
-            position: absolute; width: 100%; height: 100%;
-            transform-origin: center; transform-style: preserve-3d;
-        }
-
-        .gallery span img {
-            width: 100%; height: 100%; object-fit: cover;
-            border-radius: 12px; border: 3px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        @keyframes rotate {
-            0% { transform: rotateY(0deg); }
-            100% { transform: rotateY(360deg); }
-        }
-
-        h1 { color: #d63384; font-size: 22px; margin-bottom: 15px; }
-        button {
-            background: #ff4d6d; color: white; border: none;
-            padding: 12px 25px; border-radius: 25px; cursor: pointer;
-            font-weight: bold; width: 100%; box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
-        }
-
-        .heart { position: absolute; color: #ff4d6d; animation: float 4s linear infinite; pointer-events: none; }
-        @keyframes float {
-            0% { transform: translateY(110vh) scale(0); opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        .floating-item { position: absolute; font-size: 24px; animation: moveUp 5s linear infinite; opacity: 0; }
+        @keyframes moveUp {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
+    <div id="animation-container"></div>
     <audio id="bgm" loop><source src="music.mp3" type="audio/mpeg"></audio>
 
-    <div class="card" id="introCard">
-        <img src="https://media.tenor.com/6S30y8VfR_QAAAAi/love-is-in-the-air-joypixel.gif" style="width: 100px; margin-bottom: 10px;">
-        <h1>Sorry Kashish Ji! 🥺</h1>
-        <p style="color: #555; margin-bottom: 15px;">Maan jao na meri <b>Cute Wife</b>. Aapka <b>Rahul</b> aapse bohot pyaar karta hai.</p>
-        <button onclick="startMagic()">See Surprise 🎁</button>
-    </div>
-
-    <div class="container" id="galleryContainer">
-        <div class="gallery">
-            <span style="transform: rotateY(72deg) translateZ(250px);"><img src="Photo1.jpg"></span>
-            <span style="transform: rotateY(144deg) translateZ(250px);"><img src="Photo2.jpg"></span>
-            <span style="transform: rotateY(216deg) translateZ(250px);"><img src="Photo3.jpg"></span>
-            <span style="transform: rotateY(288deg) translateZ(250px);"><img src="Photo4.jpg"></span>
-            <span style="transform: rotateY(360deg) translateZ(250px);"><img src="Photo5.jpg"></span>
+    <div class="slider" id="mainSlider">
+        <div class="page">
+            <div class="box">
+                <img src="Photo1.jpg" class="couple-img">
+                <h1>I am Sorry Kashish Ji! 🥺</h1>
+                <p>Meri pyari <b>Cute Wife</b>, ek baar is nacheez ki baat sun lo... 🌸</p>
+                <button onclick="startApp()">Tap to Start 🎶</button>
+            </div>
         </div>
-        <div style="position: absolute; bottom: -120px; width: 300px; left: -75px; text-align: center;">
-            <h2 style="color: #d63384; text-shadow: 0 2px 5px rgba(0,0,0,0.1);">I Love You Forever! ❤️</h2>
+
+        <div class="page">
+            <div class="box">
+                <img src="Photo2.jpg" class="couple-img">
+                <p>Kashish ji, aap meri duniya ho. 🌎 Maine apni <b>Cute Wife</b> ka dil dukhaya, uske liye bohot sharminda hoon. 🥺🦋</p>
+                <button onclick="nextPage()">Aage Dekho ➡️</button>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="box">
+                <img src="Photo3.jpg" class="couple-img">
+                <p>Aap duniya ki sabse best wife ho. Kya aap apne <b>Rahul</b> ko maaf nahi karogi? 😭🌷</p>
+                <button onclick="nextPage()">Please Maan Jao ➡️</button>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="box">
+                <img src="Photo4.jpg" class="couple-img">
+                <p>Main wada karta hoon ab kabhi apni <b>Cute Wife</b> ko rone nahi dunga. I love you! 🙏❤️</p>
+                <button onclick="nextPage()">Wait, more... ➡️</button>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="box">
+                <img src="Photo5.jpg" class="couple-img">
+                <h1>I Love You Forever! ❤️</h1>
+                <p>Kashish ji, aap meri zindagi ki sabse badi khushi ho. Love you my <b>Cute Wife!</b> 💍✨</p>
+                <button onclick="location.reload()">Wapas Dekho 🔄</button>
+            </div>
         </div>
     </div>
 
     <script>
-        function startMagic() {
-            document.getElementById('bgm').play().catch(e => console.log("Audio play failed"));
-            document.getElementById('introCard').style.display = 'none';
-            document.getElementById('galleryContainer').style.display = 'block';
+        let current = 0;
+        const slider = document.getElementById('mainSlider');
+        const audio = document.getElementById('bgm');
+        const container = document.getElementById('animation-container');
+
+        function startApp() {
+            audio.play().catch(() => console.log("Click again"));
+            nextPage();
         }
 
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);
+        function nextPage() {
+            if (current < 4) {
+                current++;
+                slider.style.transform = `translateX(-${current * 100}vw)`;
+            }
         }
-        setInterval(createHeart, 300);
+
+        function createFloating() {
+            const items = ['🦋', '❤️', '🌸', '✨', '🥺'];
+            const span = document.createElement('span');
+            span.className = 'floating-item';
+            span.innerHTML = items[Math.floor(Math.random() * items.length)];
+            span.style.left = Math.random() * 100 + 'vw';
+            span.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            container.appendChild(span);
+            setTimeout(() => span.remove(), 5000);
+        }
+        setInterval(createFloating, 400);
     </script>
 </body>
 </html>
