@@ -5,44 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorry Kashish Ji ❤️ 🦋</title>
     <style>
-        body { margin: 0; font-family: 'Arial', sans-serif; background: #ffe6e6; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-        .slider { display: flex; width: 500vw; transition: transform 0.6s ease-in-out; }
-        .page { width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; box-sizing: border-box; }
-        .box { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); max-width: 350px; position: relative; z-index: 10; border: 2px solid #ffb3b3; }
-        h1 { color: #e53935; font-size: 24px; }
-        p { font-size: 18px; color: #444; line-height: 1.5; }
-        img { width: 180px; border-radius: 10px; margin-bottom: 15px; }
-        button { background: #e53935; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-size: 16px; cursor: pointer; margin-top: 20px; box-shadow: 0 4px 10px rgba(229, 57, 53, 0.3); }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Arial', sans-serif; background: #ffe6e6; overflow: hidden; }
         
-        /* Floating Butterflies & Hearts Animation */
-        .floating { position: fixed; font-size: 24px; animation: float 5s linear infinite; z-index: 1; pointer-events: none; }
-        @keyframes float { 
-            0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 1; } 
-            100% { transform: translateY(-10vh) translateX(50px) rotate(360deg); opacity: 0; } 
+        /* Background Animation Layer */
+        #animation-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+
+        .slider { display: flex; width: 500vw; height: 100vh; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        .page { 
+            width: 100vw; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px;
+        }
+
+        .box { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            max-width: 350px; 
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+            border: 2px solid #ffb3b3;
+        }
+
+        h1 { color: #e53935; font-size: 22px; margin-bottom: 10px; }
+        p { font-size: 17px; color: #444; line-height: 1.4; margin: 10px 0; }
+        img { width: 160px; height: auto; border-radius: 10px; margin-bottom: 10px; }
+        
+        button { 
+            background: #e53935; 
+            color: white; 
+            border: none; 
+            padding: 12px 25px; 
+            border-radius: 25px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            margin-top: 15px;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .floating-item { 
+            position: absolute; 
+            font-size: 24px; 
+            animation: moveUp 5s linear infinite; 
+            opacity: 0;
+        }
+
+        @keyframes moveUp {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
-    <audio id="bgm" loop preload="auto">
+    <div id="animation-container"></div>
+
+    <audio id="bgm" loop>
         <source src="music.mp3" type="audio/mpeg">
-        <source src="music.mp3" type="audio/mp3">
     </audio>
 
-    <div class="slider" id="slider">
+    <div class="slider" id="mainSlider">
         <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/079_9zU9v_AAAAAi/cute-bear-sad.gif">
                 <h1>I am Sorry Kashish Ji! 🦋</h1>
                 <p>Meri pyari <b>Cute Wife</b>, ek baar is nacheez ki baat sun lo... 🌸</p>
-                <button onclick="startApp()">Tap to Start Music 🎶</button>
+                <button onclick="startApp()">Tap to Start 🎶</button>
             </div>
         </div>
 
         <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/zM-f6_2H_pIAAAAi/mochi-mochi-peach-cat-crying.gif">
-                <p>Kashish ji, aap meri <b>Butterfly</b> ho, aur maine aapko udaas kiya. Please mujhe maaf kar do! 🦋🥺</p>
+                <p>Kashish ji, aap meri <b>Butterfly</b> ho. Maine aapko dard diya, uske liye bohot sharminda hoon. 🦋🥺</p>
                 <button onclick="nextPage()">Aage Dekho ➡️</button>
             </div>
         </div>
@@ -50,15 +93,15 @@
         <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/p_L_FmH_0m8AAAAi/hug-warm-hug.gif">
-                <p>Aap duniya ki sabse sundar aur <b>Best Wife</b> ho. Bina aapke ye Rahul adhoora hai. 🌷</p>
-                <button onclick="nextPage()">Next ➡️</button>
+                <p>Aap duniya ki sabse best wife ho. Kya aap apne Rahul ko maaf nahi karogi? 🌷</p>
+                <button onclick="nextPage()">Please Maan Jao ➡️</button>
             </div>
         </div>
 
         <div class="page">
             <div class="box">
                 <img src="https://media.tenor.com/y_A_qN4_76QAAAAi/white-bear-forgive-me.gif">
-                <p>I promise, ab se main kabhi apni <b>Cute Butterfly</b> ko pareshan nahi karunga. Maan jao na! 🙏🦋</p>
+                <p>I promise, ab se main apni <b>Cute Butterfly</b> ko kabhi pareshan nahi karunga. 🙏🦋</p>
                 <button onclick="nextPage()">Ek Last Cheez ➡️</button>
             </div>
         </div>
@@ -74,37 +117,34 @@
     </div>
 
     <script>
-        let currentPage = 0;
-        const slider = document.getElementById('slider');
+        let current = 0;
+        const slider = document.getElementById('mainSlider');
         const audio = document.getElementById('bgm');
+        const container = document.getElementById('animation-container');
 
         function startApp() {
-            // Music play karne ki koshish
-            audio.play().catch(error => {
-                console.log("Autoplay blocked, user must interact.");
-            });
+            audio.play().catch(() => console.log("Click again to play"));
             nextPage();
         }
 
         function nextPage() {
-            if (currentPage < 4) {
-                currentPage++;
-                slider.style.transform = `translateX(-${currentPage * 100}vw)`;
+            if (current < 4) {
+                current++;
+                slider.style.transform = `translateX(-${current * 100}vw)`;
             }
         }
 
-        // Floating Butterfly & Hearts Function
-        function createEmoji() {
-            const emojis = ['🦋', '❤️', '🌸', '✨'];
-            const el = document.createElement('div');
-            el.classList.add('floating');
-            el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-            el.style.left = Math.random() * 100 + 'vw';
-            el.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            document.body.appendChild(el);
-            setTimeout(() => el.remove(), 5000);
+        function createFloating() {
+            const items = ['🦋', '❤️', '🌸', '✨', '🌹'];
+            const span = document.createElement('span');
+            span.className = 'floating-item';
+            span.innerHTML = items[Math.floor(Math.random() * items.length)];
+            span.style.left = Math.random() * 100 + 'vw';
+            span.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            container.appendChild(span);
+            setTimeout(() => span.remove(), 5000);
         }
-        setInterval(createEmoji, 400);
+        setInterval(createFloating, 400);
     </script>
 
 </body>
